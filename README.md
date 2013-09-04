@@ -10,7 +10,7 @@ To access data with our reporting API you need the following information:
 
 * API endpoint URL: http://app.madvertise.de/visual_reports.json
 * Authentication: HTTP Basic access authentication with API token as username and an empty password.
-* API token: Please use the madvertise self-service (http://app.madvertise.de/) to create your own API token.
+* API token: Please use the madvertise self-service (http://app.madvertise.de/) to create your own API token or ask your madvertise contact.
 
 With this information you're able to create a HTTP GET request to get access to our reporting system. The APi supports the following paramaters:
 
