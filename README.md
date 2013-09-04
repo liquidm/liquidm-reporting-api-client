@@ -83,7 +83,7 @@ Getting started
 In your Gemfile:
 
 ```ruby
-gem 'madvertise-reporting-api-client', :git => 'git:github.com/madvertise/madvertise-reporting-api-client.git'
+gem 'madvertise-reporting-api-client', :git => 'git://github.com/madvertise/madvertise-reporting-api-client.git'
 ```
 
 In your code:
