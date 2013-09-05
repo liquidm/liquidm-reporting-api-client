@@ -26,13 +26,13 @@ With this information you're able to create a HTTP GET request to get access to 
 
 The following table shows you the possible parameters you can use.
 
-| Parameter | Value | Demand side | Supply Side |
+| Parameter | Value | Supply side | Demand Side |
 | --------- | ----- | ----------- | ----------- |
 | Granularity | all | x | x | 
 | Granularity | day | x | x |
 | Granularity | hour | x | x |
 | Dimension | timestamp | x | x |
-| Dimension | banner_type | x |  |
+| Dimension | banner_type | x | x |
 | Dimension | age | x | x |
 | Dimension | gender | x | x |
 | Dimension | carrier | x | x |
