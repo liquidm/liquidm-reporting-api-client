@@ -23,11 +23,42 @@ With this information you're able to create a HTTP GET request to get access to 
 | filters | comma separated list of filters | - | Restrics the result by the given filters | country-82,country-75 |
 | metrics | comma separated list of metrics | pis,ais,clicks | Specifies the columns of your report | requests,ais,clicks |
 
-* __Possible granularities:__ all, day, hour
-* __Possible dimensions:__ timestamp, banner_type, age, gender, carrier, plattform, country, site, ad_type
-* __Possible metrics:__ requests, pis, ais, clicks, e_cpm, earnings
+The following table shows you the possible parameters you can use.
 
-Example: http://app.madvertise.de/visual_reports.json?start_date=2013-08-07&end_date=2013-08-14&granularity=day&metrics=requests,ais,clicks
+| Parameter | Value | Demand side | Supply Side |
+| --------- | ----- | ----------- | ----------- |
+| Granularity | all | x | x | 
+| Granularity | day | x | x |
+| Granularity | hour | x | x |
+| Dimension | timestamp | x | x |
+| Dimension | banner_type | x |  |
+| Dimension | age | x | x |
+| Dimension | gender | x | x |
+| Dimension | carrier | x | x |
+| Dimension | plattform | x | x |
+| Dimension | country | x | x |
+| Dimension | site | x | x |
+| Dimension | ad_type | x |  |
+| Dimension | bidder |  | x |
+| Dimension | campaign |  | x |
+| Dimension | ad |  | x |
+| Filter | ad_type | x |  |
+| Filter | country | x | x |
+| Filter | site | x | x |
+| Filter | campaign |  | x |
+| Filter | ad |  | x |
+| Metric | requests | x |  |
+| Metric | ais | x | x |
+| Metric | clicks | x | x |
+| Metric | earnings | x |  |
+| Metric | cost |  | x |
+| Metric | ctr | x |  |
+| Metric | e_cpm | x |  |
+| Metric | fillrate | x |  |
+| Metric | downloads |  | x |
+
+
+Example: http://app.madvertise.de/visual_reports.json?start_date=2013-08-07&end_date=2013-08-14&granularity=day&metrics=ais,clicks
 
 
 Response format
