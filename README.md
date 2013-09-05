@@ -22,6 +22,7 @@ With this information you're able to create a HTTP GET request to get access to 
 | dimensions | comma separated list of dimensions | - | Specifies the dimensions of your report | timestamp,country |
 | filters | comma separated list of filters | - | Restrics the result by the given filters | country-82,country-75 |
 | metrics | comma separated list of metrics | pis,ais,clicks | Specifies the columns of your report | requests,ais,clicks |
+| currency | valid currency (iso 4217) | EUR | currently EUR and USD are supported | USD |
 
 The following table shows you the possible parameters you can use.
 
