@@ -3,10 +3,10 @@
 require 'net/http'
 require 'json'
 
-module MadvertiseReporting
+module LiquidMReporting
   class Client
 
-    def initialize(api_token, reporting_url = "http://app.madvertise.de/visual_reports.json")
+    def initialize(api_token, reporting_url = "http://app.liquidm.com/visual_reports.json")
       raise "Please provide an api-token." unless api_token
 
       @token = api_token
@@ -18,7 +18,7 @@ module MadvertiseReporting
 
       raise "Server returned no result." if !result
       raise "Server returned with reponse-code #{result.code}" if result.code != '200'
-      
+
       JSON.parse(result.body) if result.body
     end
 

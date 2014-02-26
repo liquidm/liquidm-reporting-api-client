@@ -1,4 +1,4 @@
 # encoding: UTF-8
 
-require 'madvertise-api'
+require 'liquidm-api'
 require 'webmock/rspec'
