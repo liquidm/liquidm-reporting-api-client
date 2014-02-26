@@ -1,16 +1,16 @@
-madvertise Reporting API
+LiquidM Reporting API
 ========================
 
-Madvertise offers a HTTP based reporting API which allows access to the data behind the madvertise Visual reports. 
+LiquidM offers a HTTP based reporting API which allows access to the data behind the LiquidM Visual reports.
 
 Request format
 --------------
 
 To access data with our reporting API you need the following information:
 
-* API endpoint URL: http://app.madvertise.de/visual_reports.json
+* API endpoint URL: http://app.liquidm/visual_reports.json
 * Authentication: HTTP Basic access authentication with API token as username and an empty password.
-* API token: Please use the madvertise self-service (http://app.madvertise.de/) to create your own API token or ask your madvertise contact.
+* API token: Please use the LiquidM self-service (http://app.liquidm.com/) to create your own API token or ask your LiquidM contact.
 
 With this information you're able to create a HTTP GET request to get access to our reporting system. The APi supports the following paramaters:
 
@@ -28,7 +28,7 @@ The following table shows you the possible parameters you can use.
 
 | Parameter | Value | Supply side | Demand Side |
 | --------- | ----- | ----------- | ----------- |
-| Granularity | all | x | x | 
+| Granularity | all | x | x |
 | Granularity | day | x | x |
 | Granularity | hour | x | x |
 | Dimension | timestamp | x | x |
@@ -59,13 +59,13 @@ The following table shows you the possible parameters you can use.
 | Metric | downloads |  | x |
 
 
-Example: http://app.madvertise.de/visual_reports.json?start_date=2013-08-07&end_date=2013-08-14&granularity=day&metrics=ais,clicks
+Example: http://app.liquidm.com/visual_reports.json?start_date=2013-08-07&end_date=2013-08-14&granularity=day&metrics=ais,clicks
 
 
 Response format
 ---------------
 
-Our reporting API returns a JSON response with all the information you requested. An example response looks like this: 
+Our reporting API returns a JSON response with all the information you requested. An example response looks like this:
 
  ```javascript
 	{
@@ -102,7 +102,7 @@ The response contains three different attributes and the value of these attribut
 
 Return Codes:
 -------------
-This API uses HTTP return codes. A successful response is 200. In other cases it may return different response codes. For example 401 if your authentication was wrong. 
+This API uses HTTP return codes. A successful response is 200. In other cases it may return different response codes. For example 401 if your authentication was wrong.
 
 Example client implementation in Ruby
 =====================================
@@ -115,23 +115,23 @@ Getting started
 In your Gemfile:
 
 ```ruby
-gem 'madvertise-reporting-api-client', :git => 'git://github.com/madvertise/madvertise-reporting-api-client.git'
+gem 'liquidm-reporting-api-client', :git => 'git://github.com/liquidm/liquidm-reporting-api-client.git'
 ```
 
 In your code:
 
 ```ruby
-require 'madvertise-api'
+require 'liquidm-api'
 ```
 
 Usage
 -----
 
 ```ruby
-client = MadvertiseReporting::Client.new 'api_token'
+client = LiquidMReporting::Client.new 'api_token'
 ```
 
-returns a client object on which the query method can be called to create a full and valid madvertise api query.
+returns a client object on which the query method can be called to create a full and valid LiquidM api query.
 
 ```ruby
 client.query({:start_date => '2013-08-07', :end_date => '2013-08-14', :granularity => 'day', :metrics => 'requests,ais,clicks'})
