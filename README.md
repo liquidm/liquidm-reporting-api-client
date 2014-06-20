@@ -50,7 +50,6 @@ The following table shows you the possible parameters you can use.
 | Dimension | site                 |
 | Dimension | supply_type          |
 | Dimension | timestamp            |
-| --------- | -------------------- |
 | Filter    | account              |
 | Filter    | ad                   |
 | Filter    | ad_type              |
@@ -62,7 +61,6 @@ The following table shows you the possible parameters you can use.
 | Filter    | rtb                  |
 | Filter    | site                 |
 | Filter    | traffic_set          |
-| --------- | -------------------- |
 | Metric    | ais                  |
 | Metric    | bid_cpm              |
 | Metric    | bid_rate             |
@@ -99,56 +97,56 @@ Our reporting API returns a JSON response with all the information you requested
 
 ```json
 {
-    "columns": [
-        {
-            "id": "timestamp",
-            "name": "Timestamp"
-        },
-        {
-            "id": "country",
-            "name": "Country"
-        },
-        {
-            "id": "requests",
-            "name": "Requests"
-        },
-        {
-            "id": "ais",
-            "name": "AIs"
-        },
-        {
-            "id": "clicks",
-            "name": "Clicks"
-        }
-    ],
-    "dimensions": [
-        "country"
-    ],
-    "rows": [
-        {
-            "ais": {
-                "formatted_value": "81",
-                "value": 81
-            },
-            "clicks": {
-                "formatted_value": "1",
-                "value": 1
-            },
-            "country": {
-                "name": "COUNTRY1",
-                "value": 98
-            },
-            "requests": {
-                "formatted_value": "46944",
-                "value": 46944
-            },
-            "timestamp": {
-                "formatted_value": "2013-08-07 00:00:00 +0200",
-                "value": "2013-08-07T00:00:00.000+02:00"
-            }
-        }
-        // Additional rows omitted from listing
-    ]
+  "columns": [
+    {
+      "id": "timestamp",
+      "name": "Timestamp"
+    },
+    {
+      "id": "country",
+      "name": "Country"
+    },
+    {
+      "id": "requests",
+      "name": "Requests"
+    },
+    {
+      "id": "ais",
+      "name": "AIs"
+    },
+    {
+      "id": "clicks",
+      "name": "Clicks"
+    }
+  ],
+  "dimensions": [
+    "country"
+  ],
+  "rows": [
+    {
+      "ais": {
+        "formatted_value": "81",
+        "value": 81
+      },
+      "clicks": {
+        "formatted_value": "1",
+        "value": 1
+      },
+      "country": {
+        "name": "COUNTRY1",
+        "value": 98
+      },
+      "requests": {
+        "formatted_value": "46944",
+        "value": 46944
+      },
+      "timestamp": {
+        "formatted_value": "2013-08-07 00:00:00 +0200",
+        "value": "2013-08-07T00:00:00.000+02:00"
+      }
+    }
+    // Additional rows omitted from listing
+  ]
 }
 ```
 
