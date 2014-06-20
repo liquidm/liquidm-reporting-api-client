@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    madvertise-reporting-api-client (0.1.0)
+    liquidm-reporting-api-client (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -37,6 +37,6 @@ PLATFORMS
 DEPENDENCIES
   debugger
   json
-  madvertise-reporting-api-client!
+  liquidm-reporting-api-client!
   rspec
   webmock
