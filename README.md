@@ -12,7 +12,7 @@ To access data with our reporting API you need the following information:
 * Authentication: HTTP Basic access authentication with API token as username and an empty password.
 * API token: Please use the LiquidM self-service (http://app.liquidm.com/) to create your own API token or ask your LiquidM contact.
 
-With this information you're able to create a HTTP GET request to get access to our reporting system. The APi supports the following paramaters:
+With this information you're able to create a HTTP GET request to get access to our reporting system. The API supports the following paramaters:
 
 | Parameter   | Possible value                     | Default Value       | Description                              | Example               |
 | ----------- | ---------------------------------- | ------------------- | ---------------------------------------- | --------------------- |
@@ -22,7 +22,7 @@ With this information you're able to create a HTTP GET request to get access to 
 | dimensions  | comma separated list of dimensions | -                   | Specifies the dimensions of your report  | timestamp,country     |
 | filters     | comma separated list of filters    | -                   | Restrics the result by the given filters | country-82,country-75 |
 | metrics     | comma separated list of metrics    | pis,ais,clicks      | Specifies the columns of your report     | requests,ais,clicks   |
-| currency    | valid currency (iso 4217)          | EUR                 | currently EUR and USD are supported      | USD                   |
+| currency    | ISO 4217 currency code             | EUR                 | currently EUR and USD are supported      | USD                   |
 
 The following table shows you the possible parameters you can use.
 
@@ -156,7 +156,7 @@ The response contains three different attributes and the value of these attribut
 * __columns:__ Contains a list of reported columns. For every column an id and a name is provided.
 * __rows:__ Contains a row list. Every row consists of a mapping from a column id an a pair of values (value and formatted_value). The value contains an internal format of the value (eg. id) the formatted_value is the human readable version of this value. Please be aware that the formated value will be persistent but value may change. This means formatted_value => '10€' will always be formatted like this, but the value can change from 1000000 (microcents) to 1000 (cents). If the value is an entity like a country the other key is name instead of formatted_value. If you have specified any dimensions the rows will still be one list and not contain any sublists.
 
-Return Codes:
+Return codes
 -------------
 This API uses HTTP return codes. A successful response is 200. In other cases it may return different response codes. For example 401 if your authentication was wrong.
 
