@@ -10,7 +10,7 @@ To access data with our reporting API you need the following information:
 
 * API endpoint URL: http://app.liquidm.com/visual_reports.json
 * Authentication: HTTP Basic access authentication with API token as username and an empty password.
-* API token: Please use the LiquidM self-service (http://app.liquidm.com/) to create your own API token or ask your LiquidM contact.
+* API token: Please ask your LiquidM account manager for our API token.
 
 With this information you're able to create a HTTP GET request to get access to our reporting system. The API supports the following paramaters:
 
@@ -18,73 +18,45 @@ With this information you're able to create a HTTP GET request to get access to 
 | ----------- | ---------------------------------- | ------------------- | ---------------------------------------- | --------------------- |
 | start_date  | valid date string                  | Date.today - 7.days | Start date for the report                | 2013-08-07            |
 | end_date    | valid date string                  | Date.today          | End date for the report                  | 2013-08-14            |
-| granularity | one of the granularities           | all                 | Granularity of the report                | day                   |
+| granularity | all, day, hour           | all                 | Granularity of the report              | day                   |
 | dimensions  | comma separated list of dimensions | -                   | Specifies the dimensions of your report  | timestamp,country     |
 | filters     | comma separated list of filters    | -                   | Restrics the result by the given filters | country-82,country-75 |
-| metrics     | comma separated list of metrics    | pis,ais,clicks      | Specifies the columns of your report     | requests,ais,clicks   |
-| currency    | ISO 4217 currency code             | EUR                 | currently EUR and USD are supported      | USD                   |
+| metrics     | comma separated list of metrics    | bids,ais,clicks      | Specifies the columns of your report     | bids,ais,clicks   |
+| currency    | ISO 4217 currency code             | EUR                 | All currencies supported defined by 'ISO 4217 - Currency codes'      | USD                   |
 
 The following table shows you the possible parameters you can use.
 
 | Parameter | Value                |
 | --------- | -------------------- |
-| Dimension | account              |
 | Dimension | ad                   |
-| Dimension | ad_type              |
 | Dimension | advertiser_account   |
 | Dimension | age                  |
 | Dimension | banner_height        |
-| Dimension | banner_type          |
 | Dimension | banner_width         |
-| Dimension | bidder               |
 | Dimension | campaign             |
 | Dimension | carrier              |
 | Dimension | category             |
 | Dimension | country              |
 | Dimension | gender               |
 | Dimension | mraid                |
-| Dimension | nad_template         |
-| Dimension | plattform            |
-| Dimension | requester            |
-| Dimension | rtb                  |
-| Dimension | site                 |
-| Dimension | supply_type          |
-| Dimension | timestamp            |
 | Filter    | account              |
 | Filter    | ad                   |
-| Filter    | ad_type              |
 | Filter    | banner_height        |
 | Filter    | banner_width         |
 | Filter    | campaign             |
 | Filter    | country              |
-| Filter    | platform             |
-| Filter    | rtb                  |
-| Filter    | site                 |
-| Filter    | traffic_set          |
 | Metric    | ais                  |
 | Metric    | bid_cpm              |
-| Metric    | bid_rate             |
-| Metric    | bid_requests         |
 | Metric    | bids                 |
-| Metric    | cis                  |
 | Metric    | clicks               |
-| Metric    | conversion_rate      |
-| Metric    | ctr                  |
 | Metric    | downloads            |
+| Metric    | downloads2            |
+| Metric    | downloads3            |
 | Metric    | e_cpc                |
-| Metric    | e_cpd                |
+| Metric    | e_cpx1                |
+| Metric    | e_cpx2                |
+| Metric    | e_cpx3                |
 | Metric    | e_cpm                |
-| Metric    | earnings             |
-| Metric    | fillrate             |
-| Metric    | floor_cpm            |
-| Metric    | pis                  |
-| Metric    | requests             |
-| Metric    | spendings            |
-| Metric    | video_complete       |
-| Metric    | video_first_quartile |
-| Metric    | video_midpoint       |
-| Metric    | video_third_quartile |
-| Metric    | win_rate             |
 
 
 Example: http://app.liquidm.com/visual_reports.json?start_date=2013-08-07&end_date=2013-08-14&granularity=day&metrics=ais,clicks
@@ -99,16 +71,8 @@ Our reporting API returns a JSON response with all the information you requested
 {
   "columns": [
     {
-      "id": "timestamp",
-      "name": "Timestamp"
-    },
-    {
       "id": "country",
       "name": "Country"
-    },
-    {
-      "id": "requests",
-      "name": "Requests"
     },
     {
       "id": "ais",
@@ -136,14 +100,6 @@ Our reporting API returns a JSON response with all the information you requested
         "name": "COUNTRY1",
         "value": 98
       },
-      "requests": {
-        "formatted_value": "46944",
-        "value": 46944
-      },
-      "timestamp": {
-        "formatted_value": "2013-08-07 00:00:00 +0200",
-        "value": "2013-08-07T00:00:00.000+02:00"
-      }
     }
     // Additional rows omitted from listing
   ]
