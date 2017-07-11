@@ -6,7 +6,7 @@ require 'json'
 module LiquidM
   class ReportingClient
 
-    def initialize(api_token, reporting_url = "http://app.liquidm.com/visual_reports.json")
+    def initialize(api_token, reporting_url = "https://platform.liquidm.com/visual_reports.json")
       raise "Please provide an api-token." unless api_token
 
       @token = api_token
@@ -24,23 +24,9 @@ module LiquidM
 
     private
 
-    def request(uri, username, params)
-      full_path = path_with_params(@uri.path, params)
-
-      request = Net::HTTP::Get.new(full_path, {'Content-Type' =>'application/json'})
-      request.basic_auth(username, nil)
-
-      result = Net::HTTP.start(uri.hostname, uri.port) { |http|
-        http.request(request)
-      }
-
-      result
+    def request(uri, token, params)
+      uri.query = URI.encode_www_form(params.merge({auth_token: token}))
+      Net::HTTP.get_response(uri)
     end
-
-    def path_with_params(path, params)
-      encoded_params = URI.encode_www_form(params)
-      [path, encoded_params].join("?")
-    end
-
   end
 end

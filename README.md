@@ -192,10 +192,10 @@ returns a client object on which the query method can be called to create a full
 
 ```ruby
 client.query({
-  :start_date => '2013-08-07',
-  :end_date => '2013-08-14',
+  :start_date => '2017-07-04',
+  :end_date => '2017-07-11',
   :granularity => 'day',
-  :metrics => 'requests,ais,clicks'
+  :metrics => 'bids,ais,clicks'
 })
 ```
 
