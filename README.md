@@ -1,66 +1,111 @@
 LiquidM Reporting API
 ========================
 
-LiquidM offers a HTTP based reporting API which allows access to the data behind the LiquidM visual reports.
+The LiquidM Reporting API provides you access to the reporting data that also is available via the reporting user interface in the LiquidM platform. In order to use the Reporting API you need a valid authentication token.
 
-Request format
+Authentication Token
+--------------
+
+In order to use the Reporting API you need an Authentication Token (Auth_Token).
+If you do not yet have it, please create your AUTH_TOKEN be doing a GET request via your preferred tool or browser to this URL:
+
+https://platform.liquidm.com/api/auth?email=[EMAIL]&password=[PASSWORD]&api=true
+
+Use the LiquidM login credentials you have received from your dedicated account manager.
+The generated AUTH_TOKEN is necessary for all future requests.
+If you request a new AUTH_TOKEN, the old one will no longer be valid.
+
+Request Format
 --------------
 
 To access data with our reporting API you need the following information:
 
-* API endpoint URL: http://app.liquidm.com/visual_reports.json
-* Authentication: HTTP Basic access authentication with API token as username and an empty password.
-* API token: Please ask your LiquidM account manager for our API token.
+* API endpoint URL with AUTH_TOKEN: https://platform.liquidm.com/visual_reports?auth_token=[AUTH_TOKEN]
 
-With this information you're able to create a HTTP GET request to get access to our reporting system. The API supports the following paramaters:
+With this information you're able to create a HTTP GET request to get access to our reporting system.
+When referring to the IAB standards, please see http://www.iab.com/wp-content/uploads/2016/03/OpenRTB-API-Specification-Version-2-5-FINAL.pdf
 
-| Parameter   | Possible value                     | Default Value       | Description                              | Example               |
-| ----------- | ---------------------------------- | ------------------- | ---------------------------------------- | --------------------- |
-| start_date  | valid date string                  | Date.today - 7.days | Start date for the report                | 2013-08-07            |
-| end_date    | valid date string                  | Date.today          | End date for the report                  | 2013-08-14            |
-| granularity | all, day, hour           | all                 | Granularity of the report              | day                   |
-| dimensions  | comma separated list of dimensions | -                   | Specifies the dimensions of your report  | timestamp,country     |
-| filters     | comma separated list of filters    | -                   | Restrics the result by the given filters | country-82,country-75 |
-| metrics     | comma separated list of metrics    | bids,ais,clicks      | Specifies the columns of your report     | bids,ais,clicks   |
-| currency    | ISO 4217 currency code             | EUR                 | All currencies supported defined by 'ISO 4217 - Currency codes'      | USD                   |
+The API supports the following paramaters
+-----------------------------------------
 
-The following table shows you the possible parameters you can use.
+|Parameter|Possible Value|Default Value|Description|Example|
+|---------|---------------|-------------|------------|-------|
+|start_date|valid date string|Date.today - 7.days|Start date for the report|2017-07-01|
+|end_date|valid date string|Date.today|End date for the report|2017-12-31|
+|granularity|all, day, hour|all|Generates a report aggregated by granularity|day|
+|currency|ISO 4217 currency code|EUR|All currencies supported defined by 'ISO 4217 - Currency codes'|USD|
+|time_zone|All constants under https://apidock.com/rails/TimeZone |Your user's default currency in the LiquidM platform|You can request any timezone that has an offset of one hour to UTC. 30 minutes offset is not possible|UTC|
+|dimensions|comma separated list of dimensions|-|Splits the result per requested dimension|See list of possible dimensions below|
+|filters|comma separated list of filters|-|Filters the result by filtered entity only|See list of possible filters below|
+|metrics|comma separated list of filters|ais,cost|Define which metrics you want to see in your report|See list of possible metrics below|
 
-| Parameter | Value                |
-| --------- | -------------------- |
-| Dimension | ad                   |
-| Dimension | advertiser_account   |
-| Dimension | age                  |
-| Dimension | banner_height        |
-| Dimension | banner_width         |
-| Dimension | campaign             |
-| Dimension | carrier              |
-| Dimension | category             |
-| Dimension | country              |
-| Dimension | gender               |
-| Dimension | mraid                |
-| Filter    | account              |
-| Filter    | ad                   |
-| Filter    | banner_height        |
-| Filter    | banner_width         |
-| Filter    | campaign             |
-| Filter    | country              |
-| Metric    | ais                  |
-| Metric    | bid_cpm              |
-| Metric    | bids                 |
-| Metric    | clicks               |
-| Metric    | downloads            |
-| Metric    | downloads2            |
-| Metric    | downloads3            |
-| Metric    | e_cpc                |
-| Metric    | e_cpx1                |
-| Metric    | e_cpx2                |
-| Metric    | e_cpx3                |
-| Metric    | e_cpm                |
+List of all available dimensions
+-----------------------------------------
+
+|Dimension|Name in Visual Reports|Description|
+|---------|----------------------|------------|
+|advertiser_customer|Advertiser Customer|Splits the result of your query, if you manage multiple customers in LiquidM|
+|advertiser_account|Advertiser Account|Split the results per account, if you manage multiple accounts in LiquidM|
+|campaign|Campaign|Split per campaign|
+|ad|Ad|Split per ad|
+|account|Publisher Account|Split per SSP|
+|site|Site|Split per site|
+|supply_type|Supply Type|Split between app / site|
+|age|Age|Split per age group|
+|gender|Gender|Split per gender|
+|country|Country|Split per country|
+|carrier|Carrier|Split per carrier / ISP|
+|region|Region|Split per region (region, city, ZIP code)|
+|category|Category|Split per IAB category|
+|devicetype|Device Type|Split per IAB device type|
+|device_brand|Device Brand|Split per device manufacturer|
+|model|DEvice Model|Split per device model|
+|os|OS|Split per Operating System|
+|os_version|OS version|Split per OS version|
 
 
-Example: http://app.liquidm.com/visual_reports.json?start_date=2013-08-07&end_date=2013-08-14&granularity=day&metrics=ais,clicks
+List of all available filters (Details see Dimensions above)
+-----------------------------------------
 
+|Filter|Example|
+|------|-------|
+|advertiser_customer|12345|
+|advertiser_account|54321|
+|campaign|99999|
+|ad|1234567|
+|account|6789|
+|site|123456789|
+
+
+List of all available metrics
+-----------------------------------------
+
+|Metric|Name in Visual Reports|Description|
+|------|----------------------|------------|
+|ais|Ad Impressions|Amount of delivered impressions|
+|bids|Bids|Amount of Bid Responses|
+|bid_requests|Bid Requests|Amount of all Auctions|
+|bid_rate|Bid Rate|bids/bid_requests|
+|clicks|Clicks|Amount of clicks tracked|
+|ctr|CTR|clicks/ais|
+|downloads|Conversion 1 (Downloads)|Amount of conversions pinged to the LiquidM|
+|downloads2|Conversion 2|Amount of 2nd level funnel events pinged to LiquidM|
+|downloads3|Conversion 3|Amount of 3nd level funnel events pinged to LiquidM|
+|downloads_value|Conversion Value|Value added to conversion event (Example: 1.99)|
+|e_cpc|eCPC|cost/clicks|
+|e_cpx1|eCPX 1|cost/downloads|
+|e_cpx2|eCPX 2|cost/downloads2
+|e_cpx3|eCPX 3|cost/download32
+|e_cpm|eCPM|cost/ais * 1000|
+|earnings|Cost|Supply Cost|
+|win_rate|Win Rate|ais/bids|
+|conversion_rate|Conversion Rate|downloads1/ais|
+|video_firstquartile|Video 25% Viewed|Video 25% Viewed|
+|video_midpoint|Video 50% Viewed|Video 50% Viewed|
+|video_thirdquartile|Video 75% Viewed|Video 75% Viewed|
+|video_complete|Video 100% Viewed|Video 100% Viewed|
+
+Example: https://platform.liquidm.com/visual_reports?auth_token=[AUTH_TOKEN]&start_date=2013-08-07&end_date=2013-08-14&granularity=day&metrics=ais,clicks
 
 Response format
 ---------------
