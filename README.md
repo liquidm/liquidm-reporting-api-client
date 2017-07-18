@@ -20,7 +20,7 @@ Request Format
 
 To access data with our reporting API you need the following information:
 
-* API endpoint URL with AUTH_TOKEN: https://platform.liquidm.com/visual_reports?auth_token=[AUTH_TOKEN]
+* API endpoint URL with AUTH_TOKEN: https://platform.liquidm.com/visual_reports.json?auth_token=[AUTH_TOKEN]
 
 With this information you're able to create a HTTP GET request to get access to our reporting system.
 When referring to the IAB standards, please see http://www.iab.com/wp-content/uploads/2016/03/OpenRTB-API-Specification-Version-2-5-FINAL.pdf
@@ -105,7 +105,7 @@ List of all available metrics
 |video_thirdquartile|Video 75% Viewed|Video 75% Viewed|
 |video_complete|Video 100% Viewed|Video 100% Viewed|
 
-Example: https://platform.liquidm.com/visual_reports?auth_token=[AUTH_TOKEN]&start_date=2013-08-07&end_date=2013-08-14&granularity=day&metrics=ais,clicks
+Example: https://platform.liquidm.com/visual_reports.json?auth_token=[AUTH_TOKEN]&start_date=2017-06-07&end_date=2017-06-14&granularity=day&metrics=ais,clicks
 
 Response format
 ---------------
