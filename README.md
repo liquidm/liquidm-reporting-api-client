@@ -94,7 +94,7 @@ List of all available metrics
 |e_cpc|eCPC|cost/clicks|
 |e_cpx1|eCPX 1|cost/downloads|
 |e_cpx2|eCPX 2|cost/downloads2
-|e_cpx3|eCPX 3|cost/download32
+|e_cpx3|eCPX 3|cost/downloads2
 |e_cpm|eCPM|cost/ais * 1000|
 |earnings|Cost|Supply Cost|
 |win_rate|Win Rate|ais/bids|
