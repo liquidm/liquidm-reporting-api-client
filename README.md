@@ -37,7 +37,7 @@ The API supports the following paramaters
 |time_zone|All constants under https://apidock.com/rails/TimeZone |Your user's default currency in the LiquidM platform|You can request any timezone that has an offset of one hour to UTC. 30 minutes offset is not possible|UTC|
 |dimensions|comma separated list of dimensions|-|Splits the result per requested dimension|See list of possible dimensions below|
 |filters|comma separated list of filters|-|Filters the result by filtered entity only|See list of possible filters below|
-|metrics|comma separated list of filters|ais,cost|Define which metrics you want to see in your report|See list of possible metrics below|
+|metrics|comma separated list of metrics|ais,cost|Define which metrics you want to see in your report|See list of possible metrics below|
 
 List of all available dimensions
 -----------------------------------------
