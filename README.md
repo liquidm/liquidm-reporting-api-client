@@ -85,7 +85,6 @@ List of all available metrics
 |ais|Ad Impressions|Amount of delivered impressions|
 |bids|Bids|Amount of Bid Responses|
 |bid_requests|Bid Requests|Amount of all Auctions|
-|bid_rate|Bid Rate|bids/bid_requests|
 |clicks|Clicks|Amount of clicks tracked|
 |ctr|CTR|clicks/ais|
 |downloads|Conversion 1 (Downloads)|Amount of conversions pinged to the LiquidM|
