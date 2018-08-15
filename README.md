@@ -194,6 +194,7 @@ client.query({
   :start_date => '2017-07-04',
   :end_date => '2017-07-11',
   :granularity => 'day',
+  :filters => ['campaign-99999'],
   :metrics => 'bids,ais,clicks'
 })
 ```
