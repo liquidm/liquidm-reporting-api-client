@@ -60,7 +60,7 @@ List of all available dimensions
 |devicetype|Device Type|Split per IAB device type|
 |device_brand|Device Brand|Split per device manufacturer|
 |model|Device Model|Split per device model|
-|os|OS|Split per Operating System|
+|os_name|OS|Split per Operating System|
 |os_version|OS version|Split per OS version|
 
 
