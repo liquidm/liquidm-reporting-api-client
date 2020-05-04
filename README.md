@@ -44,38 +44,41 @@ List of all available dimensions
 
 |Dimension|Name in Visual Reports|Description|
 |---------|----------------------|------------|
-|advertiser_customer|Advertiser Customer|Splits the result of your query, if you manage multiple customers in LiquidM|
-|advertiser_account|Advertiser Account|Split the results per account, if you manage multiple accounts in LiquidM|
-|campaign|Campaign|Split per campaign|
-|ad|Ad|Split per ad|
-|account|Publisher Account|Split per SSP|
-|site|Site|Split per site|
-|supply_type|Supply Type|Split between app / site|
-|age|Age|Split per age group|
-|gender|Gender|Split per gender|
+|advertiser_customer|Advertiser Customer|Splits the result by customer, if you manage multiple customers in LiquidM|
+|advertiser_account|Advertiser Account|Split the result by account, if you manage multiple accounts in LiquidM|
+|campaign|Campaign|Split by campaign|
+|ad|Ad|Split by ad|
+|budget|Budget|Split by budget|
+|account|Publisher Account|Split by SSP|
+|site|Site|Split by placement|
+|domain|Domain|Split by domain|
+|supply_type|Supply Type|Split by app / site|
+|age|Age|Split by age group|
+|gender|Gender|Split by gender|
 |country|Country|Split per country|
-|carrier|Carrier|Split per carrier / ISP|
-|region|Region|Split per region (region, city, ZIP code)|
-|category|Category|Split per IAB category|
-|devicetype|Device Type|Split per IAB device type|
-|device_brand|Device Brand|Split per device manufacturer|
-|model|Device Model|Split per device model|
-|os_name|OS|Split per Operating System|
-|os_version|OS version|Split per OS version|
+|carrier|Carrier|Split by carrier / ISP|
+|connection_type|Connection type|Split by connection type|
+|region|Region|Split by region (region, city, ZIP code)|
+|category|Category|Split by IAB category|
+|devicetype|Device Type|Split by IAB device type|
+|device_brand|Device Brand|Split by device manufacturer|
+|device_model|Device Model|Split by device model|
+|os_name|OS|Split by Operating System|
+|os_version|OS version|Split by OS version|
+|banner_height|Banner Height|Split by Height of the placement|
+|banner_width|Banner Width|Split by Width of the placement|
+|geo_location|Geo Location|Split by geo location circles|
+|video_startdelay|Video Placement|Split by video placement type|
+|media_type|Media Type|Split by Display / Native / Video / Audio|
+|audience_provider|Audience Provider|Split by audience provider|
+|audience_id|Audience Targeting|Split by audience targeting id|
+|language|Device Language| Split by language of the device|
+|retargeting_lists|Segment Id|Split by segment Id|
 
-
-List of all available filters (Details see Dimensions above)
+List of all available filters
 -----------------------------------------
 
-|Filter|Example|
-|------|-------|
-|advertiser_customer|12345|
-|advertiser_account|54321|
-|campaign|99999|
-|ad|1234567|
-|account|6789|
-|site|123456789|
-
+All dimensions are avialable as filter as well. For details see list of dimensions above.
 
 List of all available metrics
 -----------------------------------------
@@ -103,6 +106,7 @@ List of all available metrics
 |video_midpoint|Video 50% Viewed|Video 50% Viewed|
 |video_thirdquartile|Video 75% Viewed|Video 75% Viewed|
 |video_complete|Video 100% Viewed|Video 100% Viewed|
+|clicked_views|Clicked Views|Number of landing page views|
 
 Example: https://platform.liquidm.com/visual_reports.json?auth_token=[AUTH_TOKEN]&start_date=2017-06-07&end_date=2017-06-14&granularity=day&metrics=ais,clicks
 
