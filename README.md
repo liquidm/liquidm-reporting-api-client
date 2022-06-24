@@ -107,7 +107,7 @@ List of all available metrics
 |video_thirdquartile|Video 75% Viewed|Video 75% Viewed|
 |video_complete|Video 100% Viewed|Video 100% Viewed|
 |clicked_views|Clicked Views|Number of landing page views|
-|user_token_hashed|Estimation of unique users|
+|user_token_hash|Estimation of unique users|
 
 Response format
 ---------------
