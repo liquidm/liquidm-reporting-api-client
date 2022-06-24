@@ -74,7 +74,6 @@ List of all available dimensions
 |audience_id|Audience Targeting|Split by audience targeting id|
 |language|Device Language| Split by language of the device|
 |retargeting_lists|Segment Id|Split by segment Id|
-|user_token_hashed|Estimation of unique users|
 
 List of all available filters
 -----------------------------------------
@@ -108,6 +107,7 @@ List of all available metrics
 |video_thirdquartile|Video 75% Viewed|Video 75% Viewed|
 |video_complete|Video 100% Viewed|Video 100% Viewed|
 |clicked_views|Clicked Views|Number of landing page views|
+|user_token_hashed|Estimation of unique users|
 
 Response format
 ---------------
