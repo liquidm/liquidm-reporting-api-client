@@ -74,6 +74,7 @@ List of all available dimensions
 |audience_id|Audience Targeting|Split by audience targeting id|
 |language|Device Language| Split by language of the device|
 |retargeting_lists|Segment Id|Split by segment Id|
+|user_token_hashed|Estimation of unique users|
 
 List of all available filters
 -----------------------------------------
@@ -107,8 +108,6 @@ List of all available metrics
 |video_thirdquartile|Video 75% Viewed|Video 75% Viewed|
 |video_complete|Video 100% Viewed|Video 100% Viewed|
 |clicked_views|Clicked Views|Number of landing page views|
-
-Example: https://platform.liquidm.com/visual_reports.json?auth_token=[AUTH_TOKEN]&start_date=2017-06-07&end_date=2017-06-14&granularity=day&metrics=ais,clicks
 
 Response format
 ---------------
@@ -163,6 +162,13 @@ The response contains three different attributes and the value of these attribut
 Return codes
 -------------
 This API uses HTTP return codes. A successful response is 200. In other cases it may return different response codes. For example 401 if your authentication was wrong.
+
+Example HTTP Get requests
+=========================
+
+https://platform.liquidm.com/visual_reports.json?auth_token=[AUTH_TOKEN]&start_date=2017-06-07&end_date=2017-06-14&granularity=day&metrics=ais,clicks
+
+https://platform.liquidm.com/visual_reports.json?suth_token=[AUTH_TOKEN]&start_date=2022-06-07&end_date=2022-06-14&granularity=all&metrics=ais,clicks&dimensions=banner_height&filters=banner_height-50,banner_height-200
 
 Example client implementation in Ruby
 =====================================
