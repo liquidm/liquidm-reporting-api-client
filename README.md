@@ -168,7 +168,7 @@ Example HTTP Get requests
 
 https://platform.liquidm.com/visual_reports.json?auth_token=[AUTH_TOKEN]&start_date=2017-06-07&end_date=2017-06-14&granularity=day&metrics=ais,clicks
 
-https://platform.liquidm.com/visual_reports.json?suth_token=[AUTH_TOKEN]&start_date=2022-06-07&end_date=2022-06-14&granularity=all&metrics=ais,clicks&dimensions=banner_height&filters=banner_height-50,banner_height-200
+https://platform.liquidm.com/visual_reports.json?auth_token=[AUTH_TOKEN]&start_date=2022-06-07&end_date=2022-06-14&granularity=all&metrics=ais,clicks&dimensions=banner_height&filters=banner_height-50,banner_height-200
 
 Example client implementation in Ruby
 =====================================
