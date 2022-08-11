@@ -58,7 +58,7 @@ List of all available dimensions
 |country|Country|Split per country|
 |carrier|Carrier|Split by carrier / ISP|
 |connection_type|Connection type|Split by connection type|
-|region|Region|Split by region (region, city, ZIP code)|
+|region|Region|Split by region (region, DMA, city, ZIP code)|
 |category|Category|Split by IAB category|
 |devicetype|Device Type|Split by IAB device type|
 |device_brand|Device Brand|Split by device manufacturer|
